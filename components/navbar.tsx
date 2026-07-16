@@ -7,12 +7,12 @@ import { Menu, X, Shield } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const unidades = [
-  { label: 'Unidad 1', titulo: 'Fundamentos de Redes', href: '/unidad/1' },
-  { label: 'Unidad 2', titulo: 'Protocolos TCP/IP', href: '/unidad/2' },
-  { label: 'Unidad 3', titulo: 'Enrutamiento', href: '/unidad/3' },
-  { label: 'Unidad 4', titulo: 'Seguridad Informática', href: '/unidad/4' },
-  { label: 'Unidad 5', titulo: 'Criptografía', href: '/unidad/5' },
-  { label: 'Unidad 6', titulo: 'Comunicaciones', href: '/unidad/6' },
+  { label: 'Unidad 1', titulo: 'Conceptualización de un SO', href: '/unidad/1' },
+  { label: 'Unidad 2', titulo: 'Tipos de Sistemas Operativos', href: '/unidad/2' },
+  { label: 'Unidad 3', titulo: 'Gestión de Procesos', href: '/unidad/3' },
+  { label: 'Unidad 4', titulo: 'Entrada y Salida (E/S)', href: '/unidad/4' },
+  { label: 'Unidad 5', titulo: 'Gestión de Memoria', href: '/unidad/5' },
+  { label: 'Unidad 6', titulo: 'Sistema de Archivos', href: '/unidad/6' },
 ]
 
 export function Navbar() {
