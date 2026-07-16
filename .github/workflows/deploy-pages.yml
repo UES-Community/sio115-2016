@@ -16,6 +16,7 @@ concurrency:
 
 jobs:
   build:
+    if: hashFiles('package.json') != ''
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -23,6 +24,8 @@ jobs:
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
+        with:
+          version: 10
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -41,6 +44,9 @@ jobs:
       - name: Verify build output
         run: test -f out/index.html
 
+      - name: Prepare Pages artifact
+        run: touch out/.nojekyll
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
@@ -48,6 +54,7 @@ jobs:
 
   deploy:
     needs: build
+    if: needs.build.result == 'success'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
