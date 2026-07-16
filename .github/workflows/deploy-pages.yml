@@ -16,7 +16,6 @@ concurrency:
 
 jobs:
   build:
-    if: hashFiles('package.json') != ''
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -54,7 +53,6 @@ jobs:
 
   deploy:
     needs: build
-    if: needs.build.result == 'success'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
